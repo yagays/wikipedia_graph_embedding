@@ -9,7 +9,7 @@ import pandas as pd
 with open("data/jawiki_split_1/dictionary.json") as f:
     dictionary = json.load(f)
 
-with h5py.File("model/jawiki_split_1/embeddings_all_0.v47.h5", "r") as f:
+with h5py.File("model/jawiki_split_1/embeddings_all_0.v50.h5", "r") as f:
     embeddings = f["embeddings"][:, :]
 
 

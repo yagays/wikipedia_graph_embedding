@@ -47,7 +47,14 @@ def parse_line(line):
 
 with codecs.open("data/jawiki-20190901-page.sql", "r", "utf-8", "ignore") as fin:
     with open("data/jawiki-20190901-page.sql.tsv", "w") as fout:
-        for l in tqdm(fin,total=4842):
+        for l in tqdm(fin,total=456):
+            line = l.strip()
+            if is_insert_line(line):
+                fout.write("".join(parse_line(line)))
+
+with codecs.open("data/jawiki-20190901-pagelinks.sql", "r", "utf-8", "ignore") as fin:
+    with open("data/jawiki-20190901-pagelinks.sql.tsv", "w") as fout:
+        for l in tqdm(fin,total=4853):
             line = l.strip()
             if is_insert_line(line):
                 fout.write("".join(parse_line(line)))
